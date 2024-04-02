@@ -4,7 +4,7 @@ const getPosts = async () => {
         const respuesta = await fetch('https://jsonplaceholder.typicode.com/posts');
         const resultado = await respuesta.json();
 
-        if (resultado.ok === false) {
+        if (!respuesta.ok) {
             throw new Error('Error en la petición');
         }
 
